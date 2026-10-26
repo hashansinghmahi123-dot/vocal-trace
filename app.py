@@ -4,6 +4,26 @@ from psycopg.rows import dict_row
 from flask import Flask, request, redirect, render_template_string
 
 app = Flask(__name__)
+def classify_risk(description):
+    text = description.lower()
+
+    high_terms = [
+        "otp", "bank password", "upi pin",
+        "blackmail", "threat", "send money",
+        "account blocked", "remote access"
+    ]
+
+    medium_terms = [
+        "suspicious link", "unknown caller",
+        "fake job", "urgent payment", "loan offer"
+    ]
+
+    if any(term in text for term in high_terms):
+        return "High"
+    elif any(term in text for term in medium_terms):
+        return "Medium"
+    else:
+        return "Low"
 
 
 # Connect to the PostgreSQL database
