@@ -104,88 +104,123 @@ def home():
         <title>VocalTrace</title>
 
         <style>
-            * {
-                box-sizing: border-box;
-            }
+    * {
+        box-sizing: border-box;
+    }
 
-            body {
-                font-family: Arial, sans-serif;
-                background: #0f172a;
-                color: #f8fafc;
-                padding: 20px;
-                max-width: 750px;
-                margin: auto;
-            }
+    body {
+        font-family: "Courier New", monospace;
+        background: #050a0e;
+        color: #d1ffe3;
+        padding: 20px;
+        max-width: 1100px;
+        margin: auto;
+        background-image:
+            radial-gradient(circle at top right, #073b2b 0, transparent 35%);
+    }
 
-            h1 {
-                color: #38bdf8;
-                margin-bottom: 5px;
-            }
+    h1 {
+        color: #39ff88;
+        text-shadow: 0 0 12px #00ff8844;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
 
-            .subtitle {
-                color: #cbd5e1;
-                margin-bottom: 25px;
-            }
+    h2 {
+        color: #39ff88;
+        border-bottom: 1px solid #145c3b;
+        padding-bottom: 10px;
+    }
 
-            .card {
-                background: #1e293b;
-                padding: 20px;
-                border-radius: 14px;
-                margin-bottom: 18px;
-                overflow-wrap: anywhere;
-            }
+    .subtitle {
+        color: #8ca99a;
+        margin-bottom: 25px;
+    }
 
-            input, textarea, button {
-                width: 100%;
-                padding: 12px;
-                margin: 8px 0;
-                border-radius: 8px;
-                font-size: 16px;
-            }
+    .card {
+        background: #0b1518;
+        border: 1px solid #17613f;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        overflow-wrap: anywhere;
+        box-shadow: 0 0 12px #00ff8810;
+    }
 
-            input, textarea {
-                background: #f8fafc;
-                color: #0f172a;
-                border: 1px solid #cbd5e1;
-            }
+    input, textarea, button {
+        width: 100%;
+        padding: 13px;
+        margin: 8px 0;
+        border-radius: 6px;
+        font-size: 16px;
+        font-family: inherit;
+    }
 
-            textarea {
-                min-height: 110px;
-                resize: vertical;
-            }
+    input, textarea {
+        background: #050b0e;
+        color: #d1ffe3;
+        border: 1px solid #236b49;
+    }
 
-            button {
-                background: #0284c7;
-                color: white;
-                border: none;
-                cursor: pointer;
-                font-weight: bold;
-            }
+    input:focus, textarea:focus {
+        outline: 1px solid #39ff88;
+        box-shadow: 0 0 10px #39ff8833;
+    }
 
-            button:hover {
-                background: #0369a1;
-            }
+    textarea {
+        min-height: 110px;
+        resize: vertical;
+    }
 
-            .label {
-                color: #7dd3fc;
-                font-weight: bold;
-            }
+    button {
+        background: #39ff88;
+        color: #041009;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-            .notice {
-                color: #fca5a5;
-            }
+    button:hover {
+        background: #a0ffc5;
+        box-shadow: 0 0 14px #39ff8877;
+    }
 
-            .empty {
-                color: #cbd5e1;
-            }
+    .label {
+        color: #39ff88;
+        font-weight: bold;
+    }
 
-            footer {
-                color: #94a3b8;
-                text-align: center;
-                margin-top: 25px;
-                font-size: 13px;
-            }
-        </style>
+    .notice {
+        color: #ff5d6c;
+    }
+
+    .empty {
+        color: #8ca99a;
+    }
+
+    footer {
+        color: #628574;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 12px;
+        }
+
+        .card {
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+    }
+</style>
     </head>
 
     <body>
