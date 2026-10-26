@@ -70,18 +70,18 @@ def home():
     if request.method == "POST":
         number = request.form.get("number", "").strip()
         description = request.form.get("description", "").strip()
+        risk_level = classify_risk(description)
 
         if description:
             with get_db() as db:
                 db.execute(
-                    """
-                    INSERT INTO voice_reports
-                    (caller_number, report_description)
-                    VALUES (%s, %s)
-                    """,
-                    (number or None, description)
-                )
-
+    """
+    INSERT INTO voice_reports
+    (caller_number, report_description, risk_level)
+    VALUES (%s, %s, %s)
+    """,
+    (number, description, risk_level)
+)
             return redirect("/")
 
         message = "Please enter a report description."
